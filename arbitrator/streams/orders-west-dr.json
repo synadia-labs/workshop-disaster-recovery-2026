@@ -1,0 +1,14 @@
+{
+  "name": "ORDERS-WEST-DR",
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "placement": { "cluster": "east" },
+  "discard": "old",
+  "allow_direct": true,
+  "mirror_direct": true,
+  "mirror": {
+    "name": "ORDERS-WEST",
+    "consumer": { "name": "mirror-east", "deliver_subject": "_mirror.ORDERS-WEST.east" }
+  }
+}

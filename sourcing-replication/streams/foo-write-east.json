@@ -1,0 +1,11 @@
+{
+  "name": "foo-write-east",
+  "subjects": ["foo.east.>"],
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "placement": { "cluster": "east" },
+  "max_age": 3600000000000,
+  "discard": "old",
+  "allow_direct": true
+}

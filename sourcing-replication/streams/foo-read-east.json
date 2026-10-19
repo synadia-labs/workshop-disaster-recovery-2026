@@ -1,0 +1,19 @@
+{
+  "name": "foo-read-east",
+  "subjects": [],
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "placement": { "cluster": "east" },
+  "max_age": 0,
+  "discard": "old",
+  "allow_direct": true,
+  "sources": [
+    { "name": "foo-write-west", "subject_transforms": [ { "src": "foo.west.>", "dest": "foo.>" } ],
+      "consumer": { "name": "foo-read-east", "deliver_subject": "_src.foo-write-west.foo-read-east" } },
+    { "name": "foo-write-east", "subject_transforms": [ { "src": "foo.east.>", "dest": "foo.>" } ],
+      "consumer": { "name": "foo-read-east", "deliver_subject": "_src.foo-write-east.foo-read-east" } },
+    { "name": "foo-write-central", "subject_transforms": [ { "src": "foo.central.>", "dest": "foo.>" } ],
+      "consumer": { "name": "foo-read-east", "deliver_subject": "_src.foo-write-central.foo-read-east" } }
+  ]
+}

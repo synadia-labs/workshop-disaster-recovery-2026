@@ -1,0 +1,11 @@
+{
+  "name": "foo-write-west",
+  "subjects": ["foo.west.>"],
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "placement": { "cluster": "west" },
+  "max_age": 3600000000000,
+  "discard": "old",
+  "allow_direct": true
+}

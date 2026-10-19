@@ -1,0 +1,11 @@
+{
+  "name": "ORDERS",
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "discard": "old",
+  "allow_direct": true,
+  "mirror_direct": true,
+  "mirror": { "name": "ORDERS", "external": { "api": "$JS.east.API" },
+              "consumer": { "name": "mirror-west", "deliver_subject": "_mirror.ORDERS.west" } }
+}

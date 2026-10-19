@@ -1,0 +1,9 @@
+{
+  "name": "ORDERS",
+  "subjects": ["orders.>"],
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "discard": "old",
+  "allow_direct": true
+}

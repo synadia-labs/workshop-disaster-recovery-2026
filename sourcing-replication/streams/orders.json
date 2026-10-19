@@ -1,0 +1,10 @@
+{
+  "name": "ORDERS",
+  "subjects": ["orders.>"],
+  "retention": "limits",
+  "storage": "file",
+  "num_replicas": 3,
+  "placement": { "cluster": "east" },
+  "discard": "old",
+  "allow_direct": true
+}
